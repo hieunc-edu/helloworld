@@ -11,9 +11,6 @@ pipeline {
             }
         }
         stage('S3') {
-            when {
-                branch 'master'
-            }
             steps {
                 echo 'Deploying to RDG AWS s3 bucket.'
                 s3Upload(bucket: 'infinitelambda-statics-origin', includePathPattern:'**/*')
