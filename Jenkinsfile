@@ -4,6 +4,9 @@ pipeline {
             inheritFrom 'build-example-spot'
         }
     }
+    options {
+    	withAWS(region:'ap-southeast-1',credentials:'aws')
+    }
     stages {
         stage("git checkout") {
             steps {
